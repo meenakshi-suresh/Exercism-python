@@ -11,12 +11,12 @@ def square_root(number):
     low = 0
     high = number
 
-    while high - low > 1e-10:
-        mid = (low + high) / 2
+    while low <= high:
+        mid = (low + high) // 2
         if mid * mid == number:
             return mid
         if mid * mid < number:
-            low = mid
+            low = mid + 1
         else:
-            high = mid
+            high = mid - 1
     return round((low + high) / 2)
