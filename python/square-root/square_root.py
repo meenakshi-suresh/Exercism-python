@@ -10,6 +10,7 @@ def square_root(number):
     """
     low = 0
     high = number
+    ans = 0
 
     while low <= high:
         mid = (low + high) // 2
@@ -17,6 +18,7 @@ def square_root(number):
             return mid
         if mid * mid < number:
             low = mid + 1
+            ans = mid
         else:
             high = mid - 1
-    return round((low + high) / 2)
+    return ans
